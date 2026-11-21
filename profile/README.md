@@ -1,4 +1,4 @@
-# MyClinic
+# myclinic
 
 Sistema de gestão para **Microempreendedores Individuais (MEIs) da área da saúde**. Reúne em um só lugar o que o profissional autônomo costuma controlar em planilhas e cadernos: pacientes, agenda, serviços, estoque e fluxo de caixa.
 
