@@ -1,42 +1,46 @@
 # myclinic
 
-Sistema de gestão para **Microempreendedores Individuais (MEIs) da área da saúde**. Reúne em um só lugar o que o profissional autônomo costuma controlar em planilhas e cadernos: pacientes, agenda, serviços, estoque e fluxo de caixa.
+> **Projeto acadêmico** desenvolvido para a disciplina de **Programação Web** da **UNIVALI** (Universidade do Vale do Itajaí).
 
-Projeto acadêmico, construído seguindo a documentação oficial de cada tecnologia.
+O MyClinic é uma aplicação desenvolvida como parte de um projeto acadêmico, com o objetivo de criar um sistema que facilite a organização e o gerenciamento das atividades diárias de **Microempreendedores Individuais (MEIs) da área da saúde**.
 
-![Visão geral do MyClinic](painel.jpg)
+A proposta consiste em desenvolver funcionalidades que atendam às principais necessidades desses profissionais, incluindo processos como gerenciamento do fluxo de caixa, controle de estoque, organização da agenda e outras atividades que compõem a rotina administrativa e operacional de um negócio.
 
-## Funcionalidades
+O objetivo é centralizar essas atividades em uma única plataforma, substituindo processos que atualmente são realizados de forma manual por soluções digitais mais práticas e eficientes. Dessa forma, busca-se otimizar o fluxo de trabalho dos profissionais, reduzir a complexidade do gerenciamento diário e facilitar a administração de seus negócios.
 
-- **Clínica**: cadastro em etapas com dados, endereço e expediente (horário e dias de atendimento).
-- **Pacientes**: cadastro com CPF validado, busca por nome ou CPF e ficha com histórico de atendimentos.
-- **Serviços**: preço e duração de cada serviço, com opção de desativar sem perder o histórico.
-- **Agenda**: calendário por mês e por semana, agendamento em etapas que só mostra horários livres dentro do expediente, além de confirmar, remarcar, cancelar, registrar falta e concluir.
-- **Caixa**: receitas e despesas com forma de pagamento. Ao concluir um atendimento, a receita entra no caixa automaticamente, paga ou pendente.
-- **Estoque**: insumos com quantidade mínima, alerta de estoque baixo e histórico de movimentações. Uma compra pode virar despesa no caixa.
-- **Visão geral**: atendimentos do dia, valores recebidos e a receber, gráfico de receitas e despesas e próximos atendimentos.
+## Casos de uso
 
-## Repositórios
+A aplicação busca atender aos principais cenários e necessidades identificados entre os MEIs da área da saúde. Para isso, seu planejamento foi realizado com base em práticas de Engenharia de Software, por meio do levantamento e da definição dos requisitos e casos de uso que estabelecem as funcionalidades e os comportamentos esperados do sistema.
 
-| Repositório | Descrição | Stack |
-| --- | --- | --- |
-| [myclinic-api](https://github.com/myclinicorg/myclinic-api) | API REST com autenticação por sessão, regras de negócio e documentação Swagger | NestJS 12, Prisma 7, PostgreSQL 18 |
-| [myclinic-web](https://github.com/myclinicorg/myclinic-web) | Aplicação web que consome a API | Next.js 16, React 19, Tailwind CSS 4 |
+![Casos de uso do MyClinic](casos-de-uso.png)
 
-## Arquitetura
+Para cada cenário, o sistema conta com um módulo específico, responsável por reunir as funcionalidades necessárias para todas as etapas e processos do seu fluxo de gerenciamento.
 
-```
-Navegador ──▶ myclinic-web (Next.js, porta 3001) ──▶ myclinic-api (NestJS, porta 3000) ──▶ PostgreSQL
-```
+### Cadastro de pacientes
 
-O sistema é multi-clínica: cada usuário tem a sua clínica, e todos os dados ficam isolados por ela.
+Auxilia o profissional no registro e na centralização das informações de seus pacientes. Isso permite um melhor controle sobre seus clientes e facilita a consulta de informações que contribuem para a organização do atendimento e a comunicação com cada paciente. O cadastro também vincula os pacientes às consultas agendadas.
 
-## Como rodar
+### Agendamentos
 
-1. Suba a API seguindo o README do [myclinic-api](https://github.com/myclinicorg/myclinic-api#como-rodar). O comando `npx prisma db seed` cria uma conta de demonstração com dados de exemplo.
-2. Suba o front seguindo o README do [myclinic-web](https://github.com/myclinicorg/myclinic-web#como-rodar).
-3. Acesse `http://localhost:3001`.
+Permite organizar e gerenciar a agenda de atendimentos: cadastrar, consultar, reagendar e cancelar consultas de maneira prática. Cada agendamento reúne o paciente vinculado, a data, o horário e o tipo de serviço. Assim, o profissional tem uma visão mais clara dos seus compromissos e evita conflitos de horários.
 
-## Contato
+### Estoque
 
-[myclinicorgcontato@gmail.com](mailto:myclinicorgcontato@gmail.com)
+Permite cadastrar e acompanhar os produtos e materiais usados nas atividades, controlar as quantidades disponíveis, registrar entradas e saídas e consultar os itens armazenados. Isso facilita a reposição de materiais e evita a falta de produtos necessários aos atendimentos.
+
+### Fluxo de caixa
+
+Permite registrar e acompanhar as movimentações financeiras do negócio, incluindo receitas e despesas, e consultar o histórico dessas movimentações. A gestão financeira fica centralizada em um único ambiente, tornando o acompanhamento mais prático e a administração mais organizada.
+
+## Participantes
+
+- Gabriel Henrique ([@ghenriqf](https://github.com/ghenriqf))
+- João Matheus ([@joaomatheuscp](https://github.com/joaomatheuscp))
+- [@lucianotomjr](https://github.com/lucianotomjr)
+- Murilo Pavanello ([@murilopava](https://github.com/murilopava))
+
+---
+
+Projeto acadêmico sem fins comerciais, desenvolvido na disciplina de Programação Web da UNIVALI.
+
+Contato: [myclinicorgcontato@gmail.com](mailto:myclinicorgcontato@gmail.com)
